@@ -6,11 +6,303 @@ var map = L.map('my-map').setView(centerMap, zoomMap);
 
 // map //
 
-L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
-	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-	subdomains: 'abcd',
-	maxZoom: 19
+// L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
+// 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+// 	subdomains: 'abcd',
+// 	maxZoom: 19
+// }).addTo(map);
+
+// Tutorial to add google layers and style:
+// https://gitlab.com/IvanSanchez/Leaflet.GridLayer.GoogleMutant
+// style google map:
+// https://developers.google.com/maps/documentation/javascript/styling
+// https://mapstyle.withgoogle.com/
+
+var styled = L.gridLayer.googleMutant({
+    type: 'roadmap',
+    styles:
+		[
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#242f3e"
+      }
+    ]
+  },
+  {
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#746855"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#242f3e"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#d59563"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.neighborhood",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#ffffff"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#d59563"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#263c3f"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#6b9a76"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "stylers": [
+      {
+        "color": "#ebebeb"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#38414e"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#ebebeb"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9ca5b3"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#ebebeb"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#746855"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#ebebeb"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#ebebeb"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#f3d19c"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#ebebeb"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#2f3948"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#d59563"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "stylers": [
+      {
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#515c6d"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#17263c"
+      }
+    ]
+  }
+]
 }).addTo(map);
+
 
 // http://fiddle.jshell.net/260hffor/30/
 // http://dwilhelm89.github.io/LeafletSlider/
@@ -27,7 +319,7 @@ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{
 
 var TotTripsArray = [100,        50,       20,       10,       5,        0];
 var radiusArray   = [25,         20,       15,       10,       5,        3];
-var ColorArray 		= ['#DC143C','#32CD32','#FFFFFF','#C0C0C0'];
+var ColorArray 		= ['#DC143C','#32CD32','#C0C0C0','#FFF'];
 var DisplayArray 	= ['start','end','same'];
 
 const getColor = function(display) {
@@ -52,7 +344,7 @@ function Style(feature) {
   return {
     weight: 0,
     opacity: 1,
-    fillOpacity: 0.5,
+    fillOpacity: 0.8,
     fillColor: getColor(feature.properties.display).color,
     radius: getTotRadius(feature.properties.total_trips_hour)
   };
@@ -68,6 +360,20 @@ function onEachFeature (feature,layer) {
 // ADD LAYERS                      //
 // **********************************
 
+// Only Stations
+var all = L.geoJson(var_00, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: {
+    weight: 0,
+    opacity: 1,
+    fillOpacity: 0.8,
+    fillColor: '#0000CD',
+    radius: 3
+  }
+}).addTo(map);
+
 // 12:00
 var trips_00 = L.geoJson(var_00, {
   pointToLayer: function (feature, latlng) {
@@ -75,7 +381,7 @@ var trips_00 = L.geoJson(var_00, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 1:00
 var trips_01 = L.geoJson(var_01, {
@@ -84,7 +390,7 @@ var trips_01 = L.geoJson(var_01, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 2:00
 var trips_02 = L.geoJson(var_02, {
@@ -93,7 +399,7 @@ var trips_02 = L.geoJson(var_02, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 3:00
 var trips_03 = L.geoJson(var_03, {
@@ -102,7 +408,7 @@ var trips_03 = L.geoJson(var_03, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 4:00
 var trips_04 = L.geoJson(var_04, {
@@ -111,7 +417,7 @@ var trips_04 = L.geoJson(var_04, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 5:00
 var trips_05 = L.geoJson(var_05, {
@@ -120,7 +426,7 @@ var trips_05 = L.geoJson(var_05, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 6:00
 var trips_06 = L.geoJson(var_06, {
@@ -129,7 +435,7 @@ var trips_06 = L.geoJson(var_06, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 7:00
 var trips_07 = L.geoJson(var_07, {
@@ -138,7 +444,7 @@ var trips_07 = L.geoJson(var_07, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 8:00
 var trips_08 = L.geoJson(var_08, {
@@ -147,7 +453,7 @@ var trips_08 = L.geoJson(var_08, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 9:00
 var trips_09 = L.geoJson(var_09, {
@@ -156,7 +462,7 @@ var trips_09 = L.geoJson(var_09, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 10:00
 var trips_10 = L.geoJson(var_10, {
@@ -165,7 +471,7 @@ var trips_10 = L.geoJson(var_10, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 11:00
 var trips_11 = L.geoJson(var_11, {
@@ -174,7 +480,7 @@ var trips_11 = L.geoJson(var_11, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 12:00
 var trips_12 = L.geoJson(var_12, {
@@ -183,7 +489,7 @@ var trips_12 = L.geoJson(var_12, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 13:00
 var trips_13 = L.geoJson(var_13, {
@@ -192,7 +498,7 @@ var trips_13 = L.geoJson(var_13, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 14:00
 var trips_14 = L.geoJson(var_14, {
@@ -201,7 +507,7 @@ var trips_14 = L.geoJson(var_14, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 15:00
 var trips_15 = L.geoJson(var_15, {
@@ -210,7 +516,7 @@ var trips_15 = L.geoJson(var_15, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 16:00
 var trips_16 = L.geoJson(var_16, {
@@ -219,7 +525,7 @@ var trips_16 = L.geoJson(var_16, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 17:00
 var trips_17 = L.geoJson(var_17, {
@@ -228,7 +534,7 @@ var trips_17 = L.geoJson(var_17, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 18:00
 var trips_18 = L.geoJson(var_18, {
@@ -237,7 +543,7 @@ var trips_18 = L.geoJson(var_18, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 19:00
 var trips_19 = L.geoJson(var_19, {
@@ -246,7 +552,7 @@ var trips_19 = L.geoJson(var_19, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 20:00
 var trips_20 = L.geoJson(var_20, {
@@ -255,7 +561,7 @@ var trips_20 = L.geoJson(var_20, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 21:00
 var trips_21 = L.geoJson(var_21, {
@@ -264,7 +570,7 @@ var trips_21 = L.geoJson(var_21, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 22:00
 var trips_22 = L.geoJson(var_22, {
@@ -273,7 +579,7 @@ var trips_22 = L.geoJson(var_22, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 // 23:00
 var trips_23 = L.geoJson(var_23, {
@@ -282,7 +588,7 @@ var trips_23 = L.geoJson(var_23, {
   },
   style: Style, // EndStyle property calls "style" object defined above
   onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-}).addTo(map);
+});
 
 
 // **********************************
@@ -290,6 +596,7 @@ var trips_23 = L.geoJson(var_23, {
 // **********************************
 
 var overlay = {
+	'Only stations':all,
 	"12:00 am": trips_00,
 	"1:00 am": trips_01,
 	"2:00 am": trips_02,

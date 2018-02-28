@@ -3,8 +3,14 @@
 /* GENERAL STYLES */
 /*****************/
 
+h1 {
+  font-family: 'Jura', sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
 body {
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Jura', sans-serif;
   font-size: 12px;
   color: black;
 }
@@ -31,9 +37,8 @@ body {
   padding: 10px;
   border-radius: 20px 20px 20px 20px;
   width: 250px;
-  border: 0px solid ;
-  border-color:#FFF;
-  box-shadow: 10px 10px 5px -5px rgba(214,214,214,0.39);
+  border: 2px solid ;
+  border-color:#D3D3D3;
 }
 
 
@@ -78,7 +83,7 @@ body {
 
 /* Same amount of trips arriving and leaving */
 .C::before {
-  background-color: #FFFFFF;
+  background-color: #C0C0C0;
   width: 10px;
   height: 10px;
   border: 2px solid ;
@@ -90,8 +95,12 @@ body {
 /***********************/
 
 .leaflet-control-layers-expanded {
-  color: white;
-	background-color: #2da0e2;
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Jura', sans-serif;
   font-size: 12px;
+}
+
+.leaflet-control-layers-expanded {
+    border-radius: 20px ;
+    color: #0000CD;
+    background: #0000CD;
 }

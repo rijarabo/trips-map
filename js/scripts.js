@@ -7,7 +7,7 @@ var map = L.map('my-map').setView(centerMap, zoomMap);
 // map //
 
 // L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
-// 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+// 	attribution: '&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>',
 // 	subdomains: 'abcd',
 // 	maxZoom: 19
 // }).addTo(map);
@@ -23,280 +23,280 @@ var styled = L.gridLayer.googleMutant({
     styles:
 		[
   {
-    "elementType": "geometry",
-    "stylers": [
+    'elementType': 'geometry',
+    'stylers': [
       {
-        "color": "#242f3e"
+        'color': '#242f3e'
       }
     ]
   },
   {
-    "elementType": "labels",
-    "stylers": [
+    'elementType': 'labels',
+    'stylers': [
       {
-        "visibility": "off"
+        'visibility': 'off'
       }
     ]
   },
   {
-    "elementType": "labels.text.fill",
-    "stylers": [
+    'elementType': 'labels.text.fill',
+    'stylers': [
       {
-        "color": "#746855"
+        'color': '#746855'
       }
     ]
   },
   {
-    "elementType": "labels.text.stroke",
-    "stylers": [
+    'elementType': 'labels.text.stroke',
+    'stylers': [
       {
-        "color": "#242f3e"
+        'color': '#242f3e'
       }
     ]
   },
   {
-    "featureType": "administrative",
-    "elementType": "geometry",
-    "stylers": [
+    'featureType': 'administrative',
+    'elementType': 'geometry',
+    'stylers': [
       {
-        "visibility": "off"
+        'visibility': 'off'
       }
     ]
   },
   {
-    "featureType": "administrative.land_parcel",
-    "stylers": [
+    'featureType': 'administrative.land_parcel',
+    'stylers': [
       {
-        "visibility": "off"
+        'visibility': 'off'
       }
     ]
   },
   {
-    "featureType": "administrative.locality",
-    "elementType": "labels.text.fill",
-    "stylers": [
+    'featureType': 'administrative.locality',
+    'elementType': 'labels.text.fill',
+    'stylers': [
       {
-        "color": "#d59563"
+        'color': '#d59563'
       }
     ]
   },
   {
-    "featureType": "administrative.neighborhood",
-    "stylers": [
+    'featureType': 'administrative.neighborhood',
+    'stylers': [
       {
-        "visibility": "off"
+        'visibility': 'off'
       }
     ]
   },
   {
-    "featureType": "landscape",
-    "elementType": "geometry",
-    "stylers": [
+    'featureType': 'landscape',
+    'elementType': 'geometry',
+    'stylers': [
       {
-        "color": "#ffffff"
+        'color': '#ffffff'
       }
     ]
   },
   {
-    "featureType": "poi",
-    "stylers": [
+    'featureType': 'poi',
+    'stylers': [
       {
-        "visibility": "off"
+        'visibility': 'off'
       }
     ]
   },
   {
-    "featureType": "poi",
-    "elementType": "labels.text.fill",
-    "stylers": [
+    'featureType': 'poi',
+    'elementType': 'labels.text.fill',
+    'stylers': [
       {
-        "color": "#d59563"
+        'color': '#d59563'
       }
     ]
   },
   {
-    "featureType": "poi.park",
-    "elementType": "geometry",
-    "stylers": [
+    'featureType': 'poi.park',
+    'elementType': 'geometry',
+    'stylers': [
       {
-        "color": "#263c3f"
+        'color': '#263c3f'
       }
     ]
   },
   {
-    "featureType": "poi.park",
-    "elementType": "labels.text.fill",
-    "stylers": [
+    'featureType': 'poi.park',
+    'elementType': 'labels.text.fill',
+    'stylers': [
       {
-        "color": "#6b9a76"
+        'color': '#6b9a76'
       }
     ]
   },
   {
-    "featureType": "road",
-    "stylers": [
+    'featureType': 'road',
+    'stylers': [
       {
-        "color": "#ebebeb"
+        'color': '#ebebeb'
       }
     ]
   },
   {
-    "featureType": "road",
-    "elementType": "geometry",
-    "stylers": [
+    'featureType': 'road',
+    'elementType': 'geometry',
+    'stylers': [
       {
-        "color": "#38414e"
+        'color': '#38414e'
       }
     ]
   },
   {
-    "featureType": "road",
-    "elementType": "geometry.stroke",
-    "stylers": [
+    'featureType': 'road',
+    'elementType': 'geometry.stroke',
+    'stylers': [
       {
-        "color": "#ebebeb"
+        'color': '#ebebeb'
       }
     ]
   },
   {
-    "featureType": "road",
-    "elementType": "labels.icon",
-    "stylers": [
+    'featureType': 'road',
+    'elementType': 'labels.icon',
+    'stylers': [
       {
-        "visibility": "off"
+        'visibility': 'off'
       }
     ]
   },
   {
-    "featureType": "road",
-    "elementType": "labels.text.fill",
-    "stylers": [
+    'featureType': 'road',
+    'elementType': 'labels.text.fill',
+    'stylers': [
       {
-        "color": "#9ca5b3"
+        'color': '#9ca5b3'
       }
     ]
   },
   {
-    "featureType": "road.arterial",
-    "elementType": "geometry",
-    "stylers": [
+    'featureType': 'road.arterial',
+    'elementType': 'geometry',
+    'stylers': [
       {
-        "color": "#ebebeb"
+        'color': '#ebebeb'
       }
     ]
   },
   {
-    "featureType": "road.highway",
-    "elementType": "geometry",
-    "stylers": [
+    'featureType': 'road.highway',
+    'elementType': 'geometry',
+    'stylers': [
       {
-        "color": "#746855"
+        'color': '#746855'
       }
     ]
   },
   {
-    "featureType": "road.highway",
-    "elementType": "geometry.fill",
-    "stylers": [
+    'featureType': 'road.highway',
+    'elementType': 'geometry.fill',
+    'stylers': [
       {
-        "color": "#ebebeb"
+        'color': '#ebebeb'
       }
     ]
   },
   {
-    "featureType": "road.highway",
-    "elementType": "geometry.stroke",
-    "stylers": [
+    'featureType': 'road.highway',
+    'elementType': 'geometry.stroke',
+    'stylers': [
       {
-        "color": "#ebebeb"
+        'color': '#ebebeb'
       }
     ]
   },
   {
-    "featureType": "road.highway",
-    "elementType": "labels.text.fill",
-    "stylers": [
+    'featureType': 'road.highway',
+    'elementType': 'labels.text.fill',
+    'stylers': [
       {
-        "color": "#f3d19c"
+        'color': '#f3d19c'
       }
     ]
   },
   {
-    "featureType": "road.local",
-    "elementType": "geometry",
-    "stylers": [
+    'featureType': 'road.local',
+    'elementType': 'geometry',
+    'stylers': [
       {
-        "color": "#ebebeb"
+        'color': '#ebebeb'
       }
     ]
   },
   {
-    "featureType": "road.local",
-    "elementType": "labels",
-    "stylers": [
+    'featureType': 'road.local',
+    'elementType': 'labels',
+    'stylers': [
       {
-        "visibility": "on"
+        'visibility': 'on'
       }
     ]
   },
   {
-    "featureType": "transit",
-    "stylers": [
+    'featureType': 'transit',
+    'stylers': [
       {
-        "visibility": "off"
+        'visibility': 'off'
       }
     ]
   },
   {
-    "featureType": "transit",
-    "elementType": "geometry",
-    "stylers": [
+    'featureType': 'transit',
+    'elementType': 'geometry',
+    'stylers': [
       {
-        "color": "#2f3948"
+        'color': '#2f3948'
       }
     ]
   },
   {
-    "featureType": "transit.station",
-    "elementType": "labels.text.fill",
-    "stylers": [
+    'featureType': 'transit.station',
+    'elementType': 'labels.text.fill',
+    'stylers': [
       {
-        "color": "#d59563"
+        'color': '#d59563'
       }
     ]
   },
   {
-    "featureType": "water",
-    "stylers": [
+    'featureType': 'water',
+    'stylers': [
       {
-        "color": "#000000"
+        'color': '#000000'
       }
     ]
   },
   {
-    "featureType": "water",
-    "elementType": "geometry",
-    "stylers": [
+    'featureType': 'water',
+    'elementType': 'geometry',
+    'stylers': [
       {
-        "color": "#000000"
+        'color': '#000000'
       }
     ]
   },
   {
-    "featureType": "water",
-    "elementType": "labels.text.fill",
-    "stylers": [
+    'featureType': 'water',
+    'elementType': 'labels.text.fill',
+    'stylers': [
       {
-        "color": "#515c6d"
+        'color': '#515c6d'
       }
     ]
   },
   {
-    "featureType": "water",
-    "elementType": "labels.text.stroke",
-    "stylers": [
+    'featureType': 'water',
+    'elementType': 'labels.text.stroke',
+    'stylers': [
       {
-        "color": "#17263c"
+        'color': '#17263c'
       }
     ]
   }
@@ -357,6 +357,55 @@ function onEachFeature (feature,layer) {
   `)
 }
 // **********************************
+// COUNT VARIABLE                  //
+// **********************************
+
+// create a variable that counts from 0 to 24 and changes the text next to the hour//
+// inspired in the first class fiddle : https://jsfiddle.net/fksjb4pe/
+
+var count = 0;
+var i     = 0;
+var times = new Array (
+                 // i
+    '12:00 am',  // 0
+    '1:00 am',   // 1
+    '2:00 am',   // 2
+    '3:00 am',   // 3
+    '4:00 am',   // 4
+    '5:00 am',   // 5
+    '6:00 am',   // 6
+    '7:00 am',   // 7
+    '8:00 am',   // 8
+    '9:00 am',   // 9
+    '10:00 am',  // 10
+    '11:00 am',  // 11
+    '12:00 pm',  // 12
+    '1:00 pm',   // 13
+    '2:00 pm',   // 14
+    '3:00 pm',   // 15
+    '4:00 pm',   // 16
+    '5:00 pm',   // 17
+    '6:00 pm',   // 18
+    '7:00 pm',   // 19
+    '8:00 pm',   // 20
+    '9:00 pm',   // 21
+    '10:00 pm',  // 22
+    '11:00 pm'   // 23
+  );
+
+$('.StartButton').click(function() {
+  if (i <= 22) {
+    i += 1;
+    count = count + 1;
+    }
+  else {
+    i = 0
+    count = 0;
+     }
+  $('.HourCount').text(times[i])
+})
+
+// **********************************
 // ADD LAYERS                      //
 // **********************************
 
@@ -372,96 +421,96 @@ var all = L.geoJson(var_00, {
     fillColor: '#0000CD',
     radius: 3
   }
-}).addTo(map);
+}) //.addTo(map);
 
 // 12:00
-var trips_00 = L.geoJson(var_00, {
+var trips_0 = L.geoJson(var_00, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
-});
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
+}).addTo(map);;
 
 // 1:00
-var trips_01 = L.geoJson(var_01, {
+var trips_1 = L.geoJson(var_01, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 2:00
-var trips_02 = L.geoJson(var_02, {
+var trips_2 = L.geoJson(var_02, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 3:00
-var trips_03 = L.geoJson(var_03, {
+var trips_3 = L.geoJson(var_03, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 4:00
-var trips_04 = L.geoJson(var_04, {
+var trips_4 = L.geoJson(var_04, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 5:00
-var trips_05 = L.geoJson(var_05, {
+var trips_5 = L.geoJson(var_05, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 6:00
-var trips_06 = L.geoJson(var_06, {
+var trips_6 = L.geoJson(var_06, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 7:00
-var trips_07 = L.geoJson(var_07, {
+var trips_7 = L.geoJson(var_07, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 8:00
-var trips_08 = L.geoJson(var_08, {
+var trips_8 = L.geoJson(var_08, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 9:00
-var trips_09 = L.geoJson(var_09, {
+var trips_9 = L.geoJson(var_09, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 10:00
@@ -469,8 +518,8 @@ var trips_10 = L.geoJson(var_10, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 11:00
@@ -478,8 +527,8 @@ var trips_11 = L.geoJson(var_11, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 12:00
@@ -487,8 +536,8 @@ var trips_12 = L.geoJson(var_12, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 13:00
@@ -496,8 +545,8 @@ var trips_13 = L.geoJson(var_13, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 14:00
@@ -505,8 +554,8 @@ var trips_14 = L.geoJson(var_14, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 15:00
@@ -514,8 +563,8 @@ var trips_15 = L.geoJson(var_15, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 16:00
@@ -523,8 +572,8 @@ var trips_16 = L.geoJson(var_16, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 17:00
@@ -532,8 +581,8 @@ var trips_17 = L.geoJson(var_17, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 18:00
@@ -541,8 +590,8 @@ var trips_18 = L.geoJson(var_18, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 19:00
@@ -550,8 +599,8 @@ var trips_19 = L.geoJson(var_19, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 20:00
@@ -559,8 +608,8 @@ var trips_20 = L.geoJson(var_20, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 21:00
@@ -568,8 +617,8 @@ var trips_21 = L.geoJson(var_21, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 22:00
@@ -577,8 +626,8 @@ var trips_22 = L.geoJson(var_22, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 // 23:00
@@ -586,8 +635,8 @@ var trips_23 = L.geoJson(var_23, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng)
   },
-  style: Style, // EndStyle property calls "style" object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls "onEachFeature" function defined above
+  style: Style, // EndStyle property calls 'style' object defined above
+  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
 });
 
 
@@ -596,31 +645,31 @@ var trips_23 = L.geoJson(var_23, {
 // **********************************
 
 var overlay = {
-	'Only stations':all,
-	"12:00 am": trips_00,
-	"1:00 am": trips_01,
-	"2:00 am": trips_02,
-	"3:00 am": trips_03,
-	"4:00 am": trips_04,
-	"5:00 am": trips_05,
-	"6:00 am": trips_06,
-	"7:00 am": trips_07,
-	"8:00 am": trips_08,
-	"9:00 am": trips_09,
-	"10:00 am": trips_10,
-	"11:00 am": trips_11,
-	"12:00 pm": trips_12,
-	"1:00 pm": trips_13,
-	"2:00 pm": trips_14,
-	"3:00 pm": trips_15,
-	"4:00 pm": trips_16,
-	"5:00 pm": trips_17,
-	"6:00 pm": trips_18,
-	"7:00 pm": trips_19,
-	"8:00 pm": trips_20,
-	"9:00 pm": trips_21,
-	"10:00 pm": trips_22,
-	"11:00 pm": trips_23,
+	// 'Only stations':all,
+	'12:00 am': trips_0,
+	'1:00 am': trips_1,
+	'2:00 am': trips_2,
+	'3:00 am': trips_3,
+	'4:00 am': trips_4,
+	'5:00 am': trips_5,
+	'6:00 am': trips_6,
+	'7:00 am': trips_7,
+	'8:00 am': trips_8,
+	'9:00 am': trips_9,
+	'10:00 am': trips_10,
+	'11:00 am': trips_11,
+	'12:00 pm': trips_12,
+	'1:00 pm': trips_13,
+	'2:00 pm': trips_14,
+	'3:00 pm': trips_15,
+	'4:00 pm': trips_16,
+	'5:00 pm': trips_17,
+	'6:00 pm': trips_18,
+	'7:00 pm': trips_19,
+	'8:00 pm': trips_20,
+	'9:00 pm': trips_21,
+	'10:00 pm': trips_22,
+	'11:00 pm': trips_23,
 };
 
 L.control.layers(overlay,null,{collapsed:false}).addTo(map);

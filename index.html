@@ -4,7 +4,7 @@
 <head>
   <meta charset='utf-8'>
 
-  <title>CITIBIKE </title>
+  <title> 24 hours of Citibike </title>
   <meta name='description' content='CITIBIKE'>
   <meta name='author' content='RIGEL JARABO'>
 
@@ -17,21 +17,20 @@
   crossorigin=''/>
   <!-- LOAD GMaps JS API  -->
   <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCelXjId2nmXXxMtfEwYGkqM7f3aI899RQ' async defer></script>
-  <link rel='stylesheet' href='https://unpkg.com/leaflet@1.0.3/dist/leaflet.css' />
-
 
 </head>
 
 <body>
-
+  <div id='title'> <h1> This is how 24 hours of citibike trips look like </h1>
+    <button class='StartButton' tyle='display: inline-block' > Click to display next hour </button>
+    <p style='display: inline-block'></p> <div style='display: inline-block' class='HourCount' id='time'> <b>12:00 am </b></div>
+  </div>
   <div id='legend'>
-    <h1> This is how 24 hours of citibike trips look like </h1>
     <p class='legendItem A'> More trips arriving to the station </p>
     <p class='legendItem B'> More trips leaving the station  </p>
     <p class='legendItem C'> Same amount of trips arriving and leaving </p>
-    <p style='font-size: 70%'> Press Alt+Shift to draw a zoom box in an area of interest</p>
-    <button class='StartButton' > Next hour </button>
-    <p> Time: </p> <div  class='HourCount'> 12:00 am </div>
+    <p style='font-size: 80%'> Press Alt+Shift to draw a zoom box in an area of interest</p>
+    <p style='font-size: 80%'> Data for January 22, 2018</p>
   </div>
 
   <div id='container'>
@@ -53,7 +52,6 @@ integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
 crossorigin='anonymous'></script>
 <!-- LOAD GoogleMutant -->
 <script src='https://unpkg.com/leaflet.gridlayer.googlemutant@latest/Leaflet.GoogleMutant.js'></script>
-
 <!-- LOAD DATA  -->
 <script src='data/00.js'></script>
 <script src='data/01.js'></script>
@@ -82,9 +80,9 @@ crossorigin='anonymous'></script>
 
 <!-- LOAD JS script -->
 <script src='js/scripts.js'></script>
-<script src='js/player.js'></script>
 
 </body>
 </html>
+
+
   <!--
-https://github.com/almende/vis

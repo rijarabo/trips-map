@@ -25,7 +25,7 @@ body {
   bottom: 0;
 }
 
-#legend {
+#title {
   text-align: left;
   background: #FFF;
   position: absolute;
@@ -35,16 +35,57 @@ body {
   background: #FFF;
   opacity: 1;
   padding: 10px;
-  border-radius: 20px 20px 20px 20px;
-  width: 250px;
+  padding-top: 0px;
+  border-radius: 5px 5px 5px 5px;
+  width: 350px;
   border: 2px solid ;
   border-color:#D3D3D3;
 }
 
+#legend {
+  text-align: left;
+  background: #FFF;
+  position: absolute;
+  z-index: 1000;
+  top: 150px;
+  left: 56px;
+  background: #FFF;
+  opacity: 1;
+  padding-left:  10px;
+  padding-right:  10px;
+  border-radius: 5px 5px 5px 5px;
+  width: 350px;
+  border: 2px solid ;
+  border-color:#D3D3D3;
+}
+
+#time {
+  text-align: center;
+  font-family: 'Jura', sans-serif;
+  font-size: 20px;
+}
 
 /*****************/
-/*               */
+/* BUTTON        */
 /*****************/
+
+.StartButton {
+  font-family: 'Jura';
+  font-size: 12px;
+  text-align: left;
+  border-radius: 8px;
+  background-color: #D3D3D3;
+  border: 2px solid #D3D3D3;
+  color: black;
+  padding: 10px 10px;
+}
+
+.StartButton:hover {
+  background-color: transparent;
+  border: 2px solid #D3D3D3;
+  color: black;
+  cursor: pointer;
+}
 
 /*****************/
 /* LEGEND STYLES */

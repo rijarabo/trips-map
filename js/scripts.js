@@ -1,7 +1,7 @@
 
 // NYC Center
-var centerMap =[40.737633,-73.961334];
-var zoomMap= 12;
+var centerMap =[40.754539,-73.995152];
+var zoomMap= 14;
 var map = L.map('my-map').setView(centerMap, zoomMap);
 
 // map //
@@ -18,7 +18,7 @@ var map = L.map('my-map').setView(centerMap, zoomMap);
 // https://developers.google.com/maps/documentation/javascript/styling
 // https://mapstyle.withgoogle.com/
 
-var styled = L.gridLayer.googleMutant({
+var googlestyle = L.gridLayer.googleMutant({
     type: 'roadmap',
     styles:
 		[
@@ -303,7 +303,6 @@ var styled = L.gridLayer.googleMutant({
 ]
 }).addTo(map);
 
-
 // http://fiddle.jshell.net/260hffor/30/
 // http://dwilhelm89.github.io/LeafletSlider/
 
@@ -344,7 +343,7 @@ function Style(feature) {
   return {
     weight: 0,
     opacity: 1,
-    fillOpacity: 0.8,
+    fillOpacity: 0.6,
     fillColor: getColor(feature.properties.display).color,
     radius: getTotRadius(feature.properties.total_trips_hour)
   };
@@ -356,6 +355,279 @@ function onEachFeature (feature,layer) {
     <b style='font-size: 120%'>Total trips:</b> ${feature.properties.total_trips_hour}
   `)
 }
+
+// **********************************
+// ADD LAYERS                      //
+// **********************************
+
+// DATA DOWNLOADED FROM:
+// citibikenyc.com/system-data
+
+// Only Stations
+var all = L.geoJson(var_00, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: {
+    weight: 0,
+    opacity: 1,
+    fillOpacity: 0.8,
+    fillColor: '#0000CD',
+    radius: 3
+  }
+}) //.addTo(map);
+
+// 12:00
+var trips_0 = L.geoJson(var_00, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+}).addTo(map);;
+
+// 1:00
+var trips_1 = L.geoJson(var_01, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 2:00
+var trips_2 = L.geoJson(var_02, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 3:00
+var trips_3 = L.geoJson(var_03, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 4:00
+var trips_4 = L.geoJson(var_04, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 5:00
+var trips_5 = L.geoJson(var_05, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 6:00
+var trips_6 = L.geoJson(var_06, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 7:00
+var trips_7 = L.geoJson(var_07, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 8:00
+var trips_8 = L.geoJson(var_08, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 9:00
+var trips_9 = L.geoJson(var_09, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 10:00
+var trips_10 = L.geoJson(var_10, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 11:00
+var trips_11 = L.geoJson(var_11, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 12:00
+var trips_12 = L.geoJson(var_12, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 13:00
+var trips_13 = L.geoJson(var_13, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 14:00
+var trips_14 = L.geoJson(var_14, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 15:00
+var trips_15 = L.geoJson(var_15, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 16:00
+var trips_16 = L.geoJson(var_16, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 17:00
+var trips_17 = L.geoJson(var_17, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 18:00
+var trips_18 = L.geoJson(var_18, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 19:00
+var trips_19 = L.geoJson(var_19, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 20:00
+var trips_20 = L.geoJson(var_20, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 21:00
+var trips_21 = L.geoJson(var_21, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 22:00
+var trips_22 = L.geoJson(var_22, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+// 23:00
+var trips_23 = L.geoJson(var_23, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng)
+  },
+  style: Style,
+  onEachFeature: onEachFeature
+});
+
+
+// **********************************
+// LAYER CONTROL                   //
+// **********************************
+
+var overlay = {
+	// 'Only stations':all,
+	'12:00 am': trips_0,
+	'1:00 am': trips_1,
+	'2:00 am': trips_2,
+	'3:00 am': trips_3,
+	'4:00 am': trips_4,
+	'5:00 am': trips_5,
+	'6:00 am': trips_6,
+	'7:00 am': trips_7,
+	'8:00 am': trips_8,
+	'9:00 am': trips_9,
+	'10:00 am': trips_10,
+	'11:00 am': trips_11,
+	'12:00 pm': trips_12,
+	'1:00 pm': trips_13,
+	'2:00 pm': trips_14,
+	'3:00 pm': trips_15,
+	'4:00 pm': trips_16,
+	'5:00 pm': trips_17,
+	'6:00 pm': trips_18,
+	'7:00 pm': trips_19,
+	'8:00 pm': trips_20,
+	'9:00 pm': trips_21,
+	'10:00 pm': trips_22,
+	'11:00 pm': trips_23,
+};
+
+L.control.layers(overlay,null,{collapsed:false}).addTo(map);
+
 // **********************************
 // COUNT VARIABLE                  //
 // **********************************
@@ -404,272 +676,3 @@ $('.StartButton').click(function() {
      }
   $('.HourCount').text(times[i])
 })
-
-// **********************************
-// ADD LAYERS                      //
-// **********************************
-
-// Only Stations
-var all = L.geoJson(var_00, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: {
-    weight: 0,
-    opacity: 1,
-    fillOpacity: 0.8,
-    fillColor: '#0000CD',
-    radius: 3
-  }
-}) //.addTo(map);
-
-// 12:00
-var trips_0 = L.geoJson(var_00, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-}).addTo(map);;
-
-// 1:00
-var trips_1 = L.geoJson(var_01, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 2:00
-var trips_2 = L.geoJson(var_02, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 3:00
-var trips_3 = L.geoJson(var_03, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 4:00
-var trips_4 = L.geoJson(var_04, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 5:00
-var trips_5 = L.geoJson(var_05, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 6:00
-var trips_6 = L.geoJson(var_06, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 7:00
-var trips_7 = L.geoJson(var_07, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 8:00
-var trips_8 = L.geoJson(var_08, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 9:00
-var trips_9 = L.geoJson(var_09, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 10:00
-var trips_10 = L.geoJson(var_10, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 11:00
-var trips_11 = L.geoJson(var_11, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 12:00
-var trips_12 = L.geoJson(var_12, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 13:00
-var trips_13 = L.geoJson(var_13, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 14:00
-var trips_14 = L.geoJson(var_14, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 15:00
-var trips_15 = L.geoJson(var_15, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 16:00
-var trips_16 = L.geoJson(var_16, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 17:00
-var trips_17 = L.geoJson(var_17, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 18:00
-var trips_18 = L.geoJson(var_18, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 19:00
-var trips_19 = L.geoJson(var_19, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 20:00
-var trips_20 = L.geoJson(var_20, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 21:00
-var trips_21 = L.geoJson(var_21, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 22:00
-var trips_22 = L.geoJson(var_22, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-// 23:00
-var trips_23 = L.geoJson(var_23, {
-  pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
-  },
-  style: Style, // EndStyle property calls 'style' object defined above
-  onEachFeature: onEachFeature // onEachFeature property calls 'onEachFeature' function defined above
-});
-
-
-// **********************************
-// LAYER CONTROL                   //
-// **********************************
-
-var overlay = {
-	// 'Only stations':all,
-	'12:00 am': trips_0,
-	'1:00 am': trips_1,
-	'2:00 am': trips_2,
-	'3:00 am': trips_3,
-	'4:00 am': trips_4,
-	'5:00 am': trips_5,
-	'6:00 am': trips_6,
-	'7:00 am': trips_7,
-	'8:00 am': trips_8,
-	'9:00 am': trips_9,
-	'10:00 am': trips_10,
-	'11:00 am': trips_11,
-	'12:00 pm': trips_12,
-	'1:00 pm': trips_13,
-	'2:00 pm': trips_14,
-	'3:00 pm': trips_15,
-	'4:00 pm': trips_16,
-	'5:00 pm': trips_17,
-	'6:00 pm': trips_18,
-	'7:00 pm': trips_19,
-	'8:00 pm': trips_20,
-	'9:00 pm': trips_21,
-	'10:00 pm': trips_22,
-	'11:00 pm': trips_23,
-};
-
-L.control.layers(overlay,null,{collapsed:false}).addTo(map);

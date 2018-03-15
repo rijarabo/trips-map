@@ -42,12 +42,29 @@ body {
   border-color:#D3D3D3;
 }
 
-#legend {
+#chart {
   text-align: left;
   background: #FFF;
   position: absolute;
   z-index: 1000;
   top: 150px;
+  left: 56px;
+  background: #FFF;
+  opacity: 1;
+  padding-left:  10px;
+  padding-right:  10px;
+  border-radius: 5px 5px 5px 5px;
+  width: 350px;
+  border: 2px solid ;
+  border-color:#D3D3D3;
+}
+
+#legend {
+  text-align: left;
+  background: #FFF;
+  position: absolute;
+  z-index: 1000;
+  bottom: 11px;
   left: 56px;
   background: #FFF;
   opacity: 1;
@@ -74,15 +91,33 @@ body {
   font-size: 12px;
   text-align: left;
   border-radius: 8px;
-  background-color: #D3D3D3;
-  border: 2px solid #D3D3D3;
+  background-color: #FFF;
+  border: 2px solid #FFF;
   color: black;
   padding: 10px 10px;
 }
 
 .StartButton:hover {
   background-color: transparent;
-  border: 2px solid #D3D3D3;
+  border: 2px solid #0000CD;
+  color: black;
+  cursor: pointer;
+}
+
+.StopButton {
+  font-family: 'Jura';
+  font-size: 12px;
+  text-align: left;
+  border-radius: 8px;
+  background-color: #FFF;
+  border: 2px solid #FFF;
+  color: black;
+  padding: 10px 10px;
+}
+
+.StopButton:hover {
+  background-color: transparent;
+  border: 2px solid #0000CD;
   color: black;
   cursor: pointer;
 }
@@ -137,7 +172,7 @@ body {
 
 .leaflet-control-layers-expanded {
   font-family: 'Jura', sans-serif;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .leaflet-control-layers-expanded {

@@ -8,75 +8,115 @@
   <meta name='description' content='CITIBIKE'>
   <meta name='author' content='RIGEL JARABO'>
 
+  <!-- LOAD bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <!-- LOAD STYLE CSS -->
   <link rel='stylesheet' href='css/styles.css'>
-
   <!-- LOAD STYLE LEAFLET MAP (USING LEAFLET FROM A CDN http://leafletjs.com/download.html ) -->
   <link rel='stylesheet' href='https://unpkg.com/leaflet@1.3.1/dist/leaflet.css'
   integrity='sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=='
   crossorigin=''/>
   <!-- LOAD GMaps JS API  -->
   <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCelXjId2nmXXxMtfEwYGkqM7f3aI899RQ' async defer></script>
+  <!-- LOAD Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
 </head>
 
 <body>
+
+  <!-- Modal Start -->
+        <div class="modal fade" id="StartModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document" >
+            <div class="modal-content">
+              <div class="modal-header" style="background-color: #0000CD">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="color:#FFF">24 hours of citibike trips</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#FFF">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" >
+                  <p class="h6" style="color:black">
+                    This map shows 24 hours of citibike trips. </br>
+                    You can control the layers by choosing from the menu located at the right.
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
   <div id='title'> <h1> This is how 24 hours of citibike trips look like </h1>
-    <button class='StartButton' tyle='display: inline-block' > Click to display next hour </button>
-    <p style='display: inline-block'></p> <div style='display: inline-block' class='HourCount' id='time'> <b>12:00 am </b></div>
+    <!-- <div> <i class="fas fa-play-circle fa-4x" style= "color:#0000CD"></i> </div> -->
+    <button class='StartButton' tyle='display: inline-block'> <i class="fas fa-play-circle fa-4x" style= "color:#0000CD"></i></button>
+    <button class='StopButton' tyle='display: inline-block'> <i class="fas fa-stop-circle fa-4x" style= "color:#0000CD"></i></button>
+
+    <!-- <p style='display: inline-block'></p> <div style='display: inline-block' class='HourCount' id='time'> <b>12:00 am - 12:59 am</b></div> -->
   </div>
+
+  <div id='chart'>
+    <p> This will be a graph of the trips </p>
+  </div>
+
   <div id='legend'>
-    <p class='legendItem A'> More trips arriving to the station </p>
-    <p class='legendItem B'> More trips leaving the station  </p>
-    <p class='legendItem C'> Same amount of trips arriving and leaving </p>
+    <p><b> At any given hour: </b></br>
+    <p> Total number of trips:
+    1 <i class="far fa-circle fa-xs" style= "color:#C2C1C2"></i>
+      <i class="far fa-circle fa-sm" style= "color:#C2C1C2"></i>
+      <i class="far fa-circle fa-lg" style= "color:#C2C1C2"></i>
+      <i class="far fa-circle fa-2x" style= "color:#C2C1C2"></i>
+      <i class="far fa-circle fa-3x" style= "color:#C2C1C2"></i> 30 + </br>
+    <i class="fas fa-circle fa-sm" style= "color:#32CD32"></i> More trips arriving to the station</br>
+    <i class="fas fa-circle fa-sm" style= "color:#DC143C"></i> More trips leaving the station</br>
+    <i class="fas fa-circle fa-sm" style= "color:#C2C1C2"></i> Same amount of trips arriving and leaving </br>
     <p style='font-size: 80%'> Press Alt+Shift to draw a zoom box in an area of interest</p>
     <p style='font-size: 80%'> Data for January 22, 2018</p>
   </div>
 
-  <div id='container'>
-
+  <div id='my-map'>
   </div>
 
-  <div id='my-map'>  </div>
+
+  <!-- LOAD bootstrap -->
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
 
 <!-- LOAD Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Supermercado+One' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
+      <link href='https://fonts.googleapis.com/css?family=Supermercado+One' rel='stylesheet'>
+      <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
 <!-- LOAD leaflet script -->
-<script src='https://unpkg.com/leaflet@1.3.1/dist/leaflet.js'
-integrity='sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=='
-crossorigin=''></script>
-<!-- LOAD JQUERY -->
-<script src='//code.jquery.com/jquery-3.3.1.min.js'
-integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
-crossorigin='anonymous'></script>
+      <script src='https://unpkg.com/leaflet@1.3.1/dist/leaflet.js'
+      integrity='sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=='
+      crossorigin=''></script>
 <!-- LOAD GoogleMutant -->
-<script src='https://unpkg.com/leaflet.gridlayer.googlemutant@latest/Leaflet.GoogleMutant.js'></script>
+      <script src='https://unpkg.com/leaflet.gridlayer.googlemutant@latest/Leaflet.GoogleMutant.js'></script>
 <!-- LOAD DATA  -->
-<script src='data/00.js'></script>
-<script src='data/01.js'></script>
-<script src='data/02.js'></script>
-<script src='data/03.js'></script>
-<script src='data/04.js'></script>
-<script src='data/05.js'></script>
-<script src='data/06.js'></script>
-<script src='data/07.js'></script>
-<script src='data/08.js'></script>
-<script src='data/09.js'></script>
-<script src='data/10.js'></script>
-<script src='data/11.js'></script>
-<script src='data/12.js'></script>
-<script src='data/13.js'></script>
-<script src='data/14.js'></script>
-<script src='data/15.js'></script>
-<script src='data/16.js'></script>
-<script src='data/17.js'></script>
-<script src='data/18.js'></script>
-<script src='data/19.js'></script>
-<script src='data/20.js'></script>
-<script src='data/21.js'></script>
-<script src='data/22.js'></script>
-<script src='data/23.js'></script>
+      <script src='data/00.js'></script>
+      <script src='data/01.js'></script>
+      <script src='data/02.js'></script>
+      <script src='data/03.js'></script>
+      <script src='data/04.js'></script>
+      <script src='data/05.js'></script>
+      <script src='data/06.js'></script>
+      <script src='data/07.js'></script>
+      <script src='data/08.js'></script>
+      <script src='data/09.js'></script>
+      <script src='data/10.js'></script>
+      <script src='data/11.js'></script>
+      <script src='data/12.js'></script>
+      <script src='data/13.js'></script>
+      <script src='data/14.js'></script>
+      <script src='data/15.js'></script>
+      <script src='data/16.js'></script>
+      <script src='data/17.js'></script>
+      <script src='data/18.js'></script>
+      <script src='data/19.js'></script>
+      <script src='data/20.js'></script>
+      <script src='data/21.js'></script>
+      <script src='data/22.js'></script>
+      <script src='data/23.js'></script>
 
 <!-- LOAD JS script -->
 <script src='js/scripts.js'></script>

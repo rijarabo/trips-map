@@ -1,16 +1,15 @@
+// START Modal
+$(window).on('load',function(){
+    $('#StartModalLong').modal('show');
+});
 
 // NYC Center
 var centerMap =[40.754539,-73.995152];
 var zoomMap= 14;
 var map = L.map('my-map').setView(centerMap, zoomMap);
+//var graph =
 
 // map //
-
-// L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
-// 	attribution: '&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>',
-// 	subdomains: 'abcd',
-// 	maxZoom: 19
-// }).addTo(map);
 
 // Tutorial to add google layers and style:
 // https://gitlab.com/IvanSanchez/Leaflet.GridLayer.GoogleMutant
@@ -21,282 +20,220 @@ var map = L.map('my-map').setView(centerMap, zoomMap);
 var googlestyle = L.gridLayer.googleMutant({
     type: 'roadmap',
     styles:
-		[
+    [
   {
-    'elementType': 'geometry',
-    'stylers': [
+    "elementType": "geometry",
+    "stylers": [
       {
-        'color': '#242f3e'
+        "color": "#f5f5f5"
       }
     ]
   },
   {
-    'elementType': 'labels',
-    'stylers': [
+    "elementType": "labels",
+    "stylers": [
       {
-        'visibility': 'off'
+        "visibility": "off"
       }
     ]
   },
   {
-    'elementType': 'labels.text.fill',
-    'stylers': [
+    "elementType": "labels.icon",
+    "stylers": [
       {
-        'color': '#746855'
+        "visibility": "off"
       }
     ]
   },
   {
-    'elementType': 'labels.text.stroke',
-    'stylers': [
+    "elementType": "labels.text.fill",
+    "stylers": [
       {
-        'color': '#242f3e'
+        "color": "#616161"
       }
     ]
   },
   {
-    'featureType': 'administrative',
-    'elementType': 'geometry',
-    'stylers': [
+    "elementType": "labels.text.stroke",
+    "stylers": [
       {
-        'visibility': 'off'
+        "color": "#f5f5f5"
       }
     ]
   },
   {
-    'featureType': 'administrative.land_parcel',
-    'stylers': [
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
       {
-        'visibility': 'off'
+        "visibility": "off"
       }
     ]
   },
   {
-    'featureType': 'administrative.locality',
-    'elementType': 'labels.text.fill',
-    'stylers': [
+    "featureType": "administrative.land_parcel",
+    "stylers": [
       {
-        'color': '#d59563'
+        "visibility": "off"
       }
     ]
   },
   {
-    'featureType': 'administrative.neighborhood',
-    'stylers': [
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text.fill",
+    "stylers": [
       {
-        'visibility': 'off'
+        "color": "#bdbdbd"
       }
     ]
   },
   {
-    'featureType': 'landscape',
-    'elementType': 'geometry',
-    'stylers': [
+    "featureType": "administrative.neighborhood",
+    "stylers": [
       {
-        'color': '#ffffff'
+        "visibility": "off"
       }
     ]
   },
   {
-    'featureType': 'poi',
-    'stylers': [
+    "featureType": "poi",
+    "stylers": [
       {
-        'visibility': 'off'
+        "visibility": "off"
       }
     ]
   },
   {
-    'featureType': 'poi',
-    'elementType': 'labels.text.fill',
-    'stylers': [
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
       {
-        'color': '#d59563'
+        "color": "#eeeeee"
       }
     ]
   },
   {
-    'featureType': 'poi.park',
-    'elementType': 'geometry',
-    'stylers': [
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
       {
-        'color': '#263c3f'
+        "color": "#757575"
       }
     ]
   },
   {
-    'featureType': 'poi.park',
-    'elementType': 'labels.text.fill',
-    'stylers': [
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
       {
-        'color': '#6b9a76'
+        "color": "#e5e5e5"
       }
     ]
   },
   {
-    'featureType': 'road',
-    'stylers': [
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
       {
-        'color': '#ebebeb'
+        "color": "#9e9e9e"
       }
     ]
   },
   {
-    'featureType': 'road',
-    'elementType': 'geometry',
-    'stylers': [
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
       {
-        'color': '#38414e'
+        "color": "#ffffff"
       }
     ]
   },
   {
-    'featureType': 'road',
-    'elementType': 'geometry.stroke',
-    'stylers': [
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
       {
-        'color': '#ebebeb'
+        "visibility": "off"
       }
     ]
   },
   {
-    'featureType': 'road',
-    'elementType': 'labels.icon',
-    'stylers': [
+    "featureType": "road.arterial",
+    "elementType": "labels.text.fill",
+    "stylers": [
       {
-        'visibility': 'off'
+        "color": "#757575"
       }
     ]
   },
   {
-    'featureType': 'road',
-    'elementType': 'labels.text.fill',
-    'stylers': [
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
       {
-        'color': '#9ca5b3'
+        "color": "#dadada"
       }
     ]
   },
   {
-    'featureType': 'road.arterial',
-    'elementType': 'geometry',
-    'stylers': [
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
       {
-        'color': '#ebebeb'
+        "color": "#616161"
       }
     ]
   },
   {
-    'featureType': 'road.highway',
-    'elementType': 'geometry',
-    'stylers': [
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
       {
-        'color': '#746855'
+        "color": "#9e9e9e"
       }
     ]
   },
   {
-    'featureType': 'road.highway',
-    'elementType': 'geometry.fill',
-    'stylers': [
+    "featureType": "transit",
+    "stylers": [
       {
-        'color': '#ebebeb'
+        "visibility": "off"
       }
     ]
   },
   {
-    'featureType': 'road.highway',
-    'elementType': 'geometry.stroke',
-    'stylers': [
+    "featureType": "transit.line",
+    "elementType": "geometry",
+    "stylers": [
       {
-        'color': '#ebebeb'
+        "color": "#e5e5e5"
       }
     ]
   },
   {
-    'featureType': 'road.highway',
-    'elementType': 'labels.text.fill',
-    'stylers': [
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
       {
-        'color': '#f3d19c'
+        "color": "#eeeeee"
       }
     ]
   },
   {
-    'featureType': 'road.local',
-    'elementType': 'geometry',
-    'stylers': [
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
       {
-        'color': '#ebebeb'
+        "color": "#000000"
       }
     ]
   },
   {
-    'featureType': 'road.local',
-    'elementType': 'labels',
-    'stylers': [
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
       {
-        'visibility': 'on'
-      }
-    ]
-  },
-  {
-    'featureType': 'transit',
-    'stylers': [
-      {
-        'visibility': 'off'
-      }
-    ]
-  },
-  {
-    'featureType': 'transit',
-    'elementType': 'geometry',
-    'stylers': [
-      {
-        'color': '#2f3948'
-      }
-    ]
-  },
-  {
-    'featureType': 'transit.station',
-    'elementType': 'labels.text.fill',
-    'stylers': [
-      {
-        'color': '#d59563'
-      }
-    ]
-  },
-  {
-    'featureType': 'water',
-    'stylers': [
-      {
-        'color': '#000000'
-      }
-    ]
-  },
-  {
-    'featureType': 'water',
-    'elementType': 'geometry',
-    'stylers': [
-      {
-        'color': '#000000'
-      }
-    ]
-  },
-  {
-    'featureType': 'water',
-    'elementType': 'labels.text.fill',
-    'stylers': [
-      {
-        'color': '#515c6d'
-      }
-    ]
-  },
-  {
-    'featureType': 'water',
-    'elementType': 'labels.text.stroke',
-    'stylers': [
-      {
-        'color': '#17263c'
+        "color": "#9e9e9e"
       }
     ]
   }
@@ -309,6 +246,8 @@ var googlestyle = L.gridLayer.googleMutant({
 // **********************************
 // define arrays of style options //
 // **********************************
+
+// the radius depends on the total number of trips of each station at any give hour
 
 // the color will depend on the display property of each station.
 // I gave this display property when cleaning the data.
@@ -373,9 +312,9 @@ var all = L.geoJson(var_00, {
     opacity: 1,
     fillOpacity: 0.8,
     fillColor: '#0000CD',
-    radius: 3
+    radius: 2
   }
-}) //.addTo(map);
+}).addTo(map);
 
 // 12:00
 var trips_0 = L.geoJson(var_00, {
@@ -384,7 +323,7 @@ var trips_0 = L.geoJson(var_00, {
   },
   style: Style,
   onEachFeature: onEachFeature
-}).addTo(map);;
+})//.addTo(map);
 
 // 1:00
 var trips_1 = L.geoJson(var_01, {
@@ -598,81 +537,194 @@ var trips_23 = L.geoJson(var_23, {
 // LAYER CONTROL                   //
 // **********************************
 
-var overlay = {
+var overlayArray = {
 	// 'Only stations':all,
-	'12:00 am': trips_0,
-	'1:00 am': trips_1,
-	'2:00 am': trips_2,
-	'3:00 am': trips_3,
-	'4:00 am': trips_4,
-	'5:00 am': trips_5,
-	'6:00 am': trips_6,
-	'7:00 am': trips_7,
-	'8:00 am': trips_8,
-	'9:00 am': trips_9,
-	'10:00 am': trips_10,
-	'11:00 am': trips_11,
-	'12:00 pm': trips_12,
-	'1:00 pm': trips_13,
-	'2:00 pm': trips_14,
-	'3:00 pm': trips_15,
-	'4:00 pm': trips_16,
-	'5:00 pm': trips_17,
-	'6:00 pm': trips_18,
-	'7:00 pm': trips_19,
-	'8:00 pm': trips_20,
-	'9:00 pm': trips_21,
-	'10:00 pm': trips_22,
-	'11:00 pm': trips_23,
+	'12:00 am - 12:59 am': trips_0,
+	'1:00 am - 1:59 am': trips_1,
+	'2:00 am - 2:59 am': trips_2,
+	'3:00 am - 3:59 am': trips_3,
+	'4:00 am - 4:59 am': trips_4,
+	'5:00 am - 5:59 am': trips_5,
+	'6:00 am - 6:59 am': trips_6,
+	'7:00 am - 7:59 am': trips_7,
+	'8:00 am - 8:59 am': trips_8,
+	'9:00 am - 9:59 am': trips_9,
+	'10:00 am - 10:59 am': trips_10,
+	'11:00 am - 11:59 am': trips_11,
+	'12:00 pm - 12:59 pm': trips_12,
+	'1:00 pm - 1:59 pm': trips_13,
+	'2:00 pm - 2:59 pm': trips_14,
+	'3:00 pm - 3:59 pm': trips_15,
+	'4:00 pm - 4:59 pm': trips_16,
+	'5:00 pm - 5:59 pm': trips_17,
+	'6:00 pm - 6:59 pm': trips_18,
+	'7:00 pm - 7:59 pm': trips_19,
+	'8:00 pm - 8:59 pm': trips_20,
+	'9:00 pm - 9:59 pm': trips_21,
+	'10:00 pm - 10:59 pm': trips_22,
+	'11:00 pm - 11:59 pm': trips_23,
 };
 
-L.control.layers(overlay,null,{collapsed:false}).addTo(map);
+L.control.layers(overlayArray,null,{collapsed:false}).addTo(map);
+
+// **********************************
+// PLAY ARRAY                      //
+// **********************************
+
+var layersArray = [
+    all,
+    trips_0,
+    trips_1,
+    trips_2,
+    trips_3,
+    trips_4,
+    trips_5,
+    trips_6,
+    trips_7,
+    trips_8,
+    trips_9,
+    trips_10,
+    trips_11,
+    trips_12,
+    trips_13,
+    trips_14,
+    trips_15,
+    trips_16,
+    trips_17,
+    trips_18,
+    trips_19,
+    trips_20,
+    trips_21,
+    trips_22,
+    trips_23,
+];
+
+var count = -1;
+var i     = -1;
+var timer;
+
+function timeoutFunction() {
+    timer=setTimeout(changeLayerFunc, 0);
+}
+
+function changeLayerFunc() {
+  if (i <= 22) {
+    i += 1;
+    count = count + 1;
+    map.removeLayer(layersArray[i]);
+    map.addLayer(layersArray[i+1]);
+    }
+  else {
+    i = -1
+    count = -1;
+    }
+}
+function repeatFunc() {
+  if (i <= 22) timeoutFunction()
+}
+
+function stopFunction() {
+      this.eachLayer(function (layer) {
+        this.removeLayer(layer);
+      }, this)
+  map.addLayer(all);
+}
+
+
+
+
+$('.StartButton').click(timeoutFunction,repeatFunc);
+$('.StopButton').click(stopFunction);
+
+
+// http://www.chartjs.org/docs/latest/
+
+// var timer = setTimeout(function {
+//   // remove all layers
+//   layersArray.forEach(function(layer) {
+//     map.removeLayer(layer)
+//     map.addLayer(layersArray['layer' + i])
+//   })
+//   i++;
+//
+//
+//   if (i < layersArray.length) timer();
+// }, 1000)
+
+// function removeallfunction(){
+//   map.removeLayer(all)
+// }
+
+// function changeLayerFunc() {
+//   // remove all layers
+//     layersArray.forEach(function(layer) {
+//       map.removeLayer(layer),
+//       map.addLayer(layersArray['layer' + i])}
+//     )
+// }
+
+  // i++;
+  // if (i < layersArray.length) timer();
+// };
+
+// $('.StartButton').click(function() {
+//   if (i <= 22) {
+//     i += 1;
+//     count = count + 1;
+//     }
+//   else {
+//     i = 0
+//     count = 0;
+//      }
+//   $('.HourCount').text(times[i])
+// });
 
 // **********************************
 // COUNT VARIABLE                  //
 // **********************************
 
-// create a variable that counts from 0 to 24 and changes the text next to the hour//
-// inspired in the first class fiddle : https://jsfiddle.net/fksjb4pe/
-
-var count = 0;
-var i     = 0;
-var times = new Array (
-                 // i
-    '12:00 am',  // 0
-    '1:00 am',   // 1
-    '2:00 am',   // 2
-    '3:00 am',   // 3
-    '4:00 am',   // 4
-    '5:00 am',   // 5
-    '6:00 am',   // 6
-    '7:00 am',   // 7
-    '8:00 am',   // 8
-    '9:00 am',   // 9
-    '10:00 am',  // 10
-    '11:00 am',  // 11
-    '12:00 pm',  // 12
-    '1:00 pm',   // 13
-    '2:00 pm',   // 14
-    '3:00 pm',   // 15
-    '4:00 pm',   // 16
-    '5:00 pm',   // 17
-    '6:00 pm',   // 18
-    '7:00 pm',   // 19
-    '8:00 pm',   // 20
-    '9:00 pm',   // 21
-    '10:00 pm',  // 22
-    '11:00 pm'   // 23
-  );
-
-$('.StartButton').click(function() {
-  if (i <= 22) {
-    i += 1;
-    count = count + 1;
-    }
-  else {
-    i = 0
-    count = 0;
-     }
-  $('.HourCount').text(times[i])
-})
+// // create a variable that counts from 0 to 24 and changes the text next to the hour//
+// // inspired in the first class fiddle : https://jsfiddle.net/fksjb4pe/
+//
+// var count = 0;
+// var i     = 0;
+// var times = new Array (
+//                  // i
+//         '12:00 am - 12:59 am',
+//        	'1:00 am - 1:59 am',
+//        	'2:00 am - 2:59 am',
+//        	'3:00 am - 3:59 am',
+//        	'4:00 am - 4:59 am',
+//        	'5:00 am - 5:59 am',
+//        	'6:00 am - 6:59 am',
+//        	'7:00 am - 7:59 am',
+//        	'8:00 am - 8:59 am',
+//        	'9:00 am - 9:59 am',
+//        	'10:00 am - 10:59 am',
+//        	'11:00 am - 11:59 am',
+//        	'12:00 pm - 12:59 pm',
+//        	'1:00 pm - 1:59 pm',
+//        	'2:00 pm - 2:59 pm',
+//        	'3:00 pm - 3:59 pm',
+//        	'4:00 pm - 4:59 pm',
+//        	'5:00 pm - 5:59 pm',
+//        	'6:00 pm - 6:59 pm',
+//        	'7:00 pm - 7:59 pm',
+//        	'8:00 pm - 8:59 pm',
+//        	'9:00 pm - 9:59 pm',
+//        	'10:00 pm - 10:59 pm',
+//        	'11:00 pm - 11:59 pm',
+//   );
+//
+//
+// $('.StartButton').click(function() {
+//   if (i <= 22) {
+//     i += 1;
+//     count = count + 1;
+//     }
+//   else {
+//     i = 0
+//     count = 0;
+//      }
+//   $('.HourCount').text(times[i])
+// })

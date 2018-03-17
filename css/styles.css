@@ -4,7 +4,13 @@
 /*****************/
 
 h1 {
-  font-family: 'Jura', sans-serif;
+  font-family: 'Walter Turncoat', cursive;
+  font-size: 30px;
+  color: #0000CD;
+}
+
+h2 {
+  font-family: 'Walter Turncoat', cursive;
   font-size: 20px;
   color: black;
 }
@@ -15,63 +21,36 @@ body {
   color: black;
 }
 
+/* p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 20px;
+} */
+
 #my-map {
   position: fixed;
   position: absolute;
-  margin-top: 0px;
+  margin-left: 300px;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
 }
 
-#title {
+#container {
   text-align: left;
-  background: #FFF;
+  background: rgba(255, 255, 255,.08);
   position: absolute;
   z-index: 1000;
-  top: 11px;
-  left: 56px;
-  background: #FFF;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   opacity: 1;
   padding: 10px;
   padding-top: 0px;
   border-radius: 5px 5px 5px 5px;
-  width: 350px;
-  border: 2px solid ;
-  border-color:#D3D3D3;
-}
-
-#chart {
-  text-align: left;
-  background: #FFF;
-  position: absolute;
-  z-index: 1000;
-  top: 150px;
-  left: 56px;
-  background: #FFF;
-  opacity: 1;
-  padding-left:  10px;
-  padding-right:  10px;
-  border-radius: 5px 5px 5px 5px;
-  width: 350px;
-  border: 2px solid ;
-  border-color:#D3D3D3;
-}
-
-#legend {
-  text-align: left;
-  background: #FFF;
-  position: absolute;
-  z-index: 1000;
-  bottom: 11px;
-  left: 56px;
-  background: #FFF;
-  opacity: 1;
-  padding-left:  10px;
-  padding-right:  10px;
-  border-radius: 5px 5px 5px 5px;
-  width: 350px;
+  width: 300px;
   border: 2px solid ;
   border-color:#D3D3D3;
 }
@@ -82,90 +61,44 @@ body {
   font-size: 20px;
 }
 
+#legend {
+  text-align: left;
+  background: #FFF;
+  position: absolute;
+  z-index: 1000;
+  bottom: 50px;
+  left: 50px;
+  width: 200px;
+  opacity: 1;
+  padding: 10px;
+  padding-top: 0px;
+  border-radius: 5px 5px 5px 5px;
+  width: 300px;
+  border: 2px solid ;
+  border-color:#D3D3D3;
+}
+
 /*****************/
-/* BUTTON        */
+/* BUTTONS       */
 /*****************/
 
-.StartButton {
-  font-family: 'Jura';
-  font-size: 12px;
-  text-align: left;
+.button {
+  text-align: center;
   border-radius: 8px;
   background-color: #FFF;
   border: 2px solid #FFF;
-  color: black;
   padding: 10px 10px;
 }
 
-.StartButton:hover {
+.button:hover {
   background-color: transparent;
   border: 2px solid #0000CD;
-  color: black;
   cursor: pointer;
 }
 
-.StopButton {
-  font-family: 'Jura';
-  font-size: 12px;
-  text-align: left;
-  border-radius: 8px;
-  background-color: #FFF;
-  border: 2px solid #FFF;
-  color: black;
-  padding: 10px 10px;
+.button:active {
+
 }
-
-.StopButton:hover {
-  background-color: transparent;
-  border: 2px solid #0000CD;
-  color: black;
-  cursor: pointer;
-}
-
-/*****************/
-/* LEGEND STYLES */
-/*****************/
-
-.legendItem {
-  display: inline-block;
-}
-
-.legendItem::before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  border-radius: 50%;
-  position: relative;
-  Opacity: 0.
-}
-
-/* More trips arriving to the station */
-.A::before {
-  background-color: #32CD32;
-  width: 10px;
-  height: 10px;
-  border: 2px solid ;
-  border-color: #32CD32;
-}
-
-/* More trips leaving the station */
-.B::before {
-  background-color: #DC143C;
-  width: 10px;
-  height: 10px;
-  border: 2px solid ;
-  border-color: #DC143C;
-}
-
-/* Same amount of trips arriving and leaving */
-.C::before {
-  background-color: #C0C0C0;
-  width: 10px;
-  height: 10px;
-  border: 2px solid ;
-  border-color: #C0C0C0;
-}
-
 /***********************/
 /* LAYER control STYLE */
 /***********************/
@@ -175,8 +108,7 @@ body {
   font-size: 10px;
 }
 
-.leaflet-control-layers-expanded {
-    border-radius: 20px ;
-    color: #0000CD;
-    background: #0000CD;
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+    border: 2px solid rgba(0,0,0,0.2);
+    background-clip: padding-box;
 }

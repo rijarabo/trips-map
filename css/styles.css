@@ -21,12 +21,6 @@ body {
   color: black;
 }
 
-/* p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  margin-left: 20px;
-} */
-
 #my-map {
   position: fixed;
   position: absolute;
@@ -67,15 +61,12 @@ body {
   position: absolute;
   z-index: 1000;
   bottom: 50px;
-  left: 50px;
   width: 200px;
   opacity: 1;
   padding: 10px;
   padding-top: 0px;
   border-radius: 5px 5px 5px 5px;
   width: 300px;
-  border: 2px solid ;
-  border-color:#D3D3D3;
 }
 
 /*****************/
@@ -96,9 +87,18 @@ body {
   cursor: pointer;
 }
 
-.button:active {
-
+.buttondis {
+  text-align: center;
+  border-radius: 8px;
+  background-color: #FFF;
+  border: 2px solid #FFF;
+  padding: 10px 10px;
 }
+
+.buttondis:hover {
+  cursor: not-allowed;
+}
+
 /***********************/
 /* LAYER control STYLE */
 /***********************/
@@ -111,4 +111,19 @@ body {
 .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
     border: 2px solid rgba(0,0,0,0.2);
     background-clip: padding-box;
+}
+
+/***********************/
+/* POPUP STYLE         */
+/***********************/
+
+.leaflet-popup-content-wrapper {
+  border: 2px solid #0000CD;
+  border-radius: 8px;
+}
+
+.leaflet-popup-content {
+  font-family: 'Jura', sans-serif;
+  font-size: 10px;
+  color: black;
 }

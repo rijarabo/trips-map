@@ -33,6 +33,7 @@ var overlayArray = {
 	'11:00 pm - 11:59 pm': trips_23,
 };
 
+// var layerVar = L.control.layers(overlayArray,null)
 var layerVar = L.control.layers(overlayArray,null,{collapsed:false, position: 'topright'})
 
 // **********************************
@@ -186,10 +187,17 @@ var outgoingtripsArray = new Array (
 
 var i     = -1;  // Starts -1 because the first layer in the array is 0
 var timer;
+var l 		=  1;
 
-function playFunction() {   // Function called by "play" button.
+function playFunction() {
     timer=setTimeout(changeLayerFunc, time);
-    }
+		$('#PauseButtonD').show();
+		$('#StopButtonD').show();
+		$('#PauseButton').hide();
+		$('#StopButton').hide();
+		$('#StartButton').show();
+		$('#StartButtonD').hide();
+}
 
 function changeLayerFunc() {
     if (i <= 22) {
@@ -211,18 +219,38 @@ function changeLayerFunc() {
     }
 
 function pauseFunction() {   // Function called by "pause" button, stops the timer but doesnt reset the player.
-  window.clearTimeout(timer)
+  window.clearTimeout(timer);
+	$('#PauseButtonD').hide();
+	$('#StopButtonD').hide();
+	$('#PauseButton').show();
+	$('#StopButton').show();
+	$('#StartButton').hide();
+	$('#StartButtonD').show();
 }
 
 function stopFunction() {   // Function called by "stop" button, resets the player.
   window.clearTimeout(timer)
   map.removeLayer(layersArray[i+1]);
-  map.addLayer(layersArray[0])
-  i = -1
+  map.addLayer(layersArray[0]);
+  i = -1;
+	$('#PauseButtonD').hide();
+	$('#StopButtonD').hide();
+	$('#PauseButton').show();
+	$('#StopButton').show();
+	$('#StartButton').hide();
+	$('#StartButtonD').show();
 }
 
 function showLayerFunction() {   // Function called by "Show layer" button, resets the player.
-  layerVar.addTo(map);
+	layerVar.addTo(map);
+	$('#layerButtonMin').show();
+	$('#layerButtonMax').hide();
+}
+
+function hideLayerFunction() {   // Function called by "Hide layer" button, resets the player.
+	map.removeControl(layerVar);
+	$('#layerButtonMin').hide();
+	$('#layerButtonMax').show();
 }
 
 function showinfoFunction() {   // Function called by "Shwor info" button, resets the player.
@@ -235,205 +263,18 @@ function showgraphFunction() {   // Function called by "Shwor graph" button, res
 
 ///////////////////
 
-$('#StartButton').click(playFunction);
+$('#StartButtonD').click(playFunction);
 
-$('#PauseButton').click(pauseFunction);
+$('#PauseButtonD').click(pauseFunction);
 
-$('#StopButton').click(stopFunction);
+$('#StopButtonD').click(stopFunction);
 
 ///////////////////
 
-$('#layerButton').click(showLayerFunction);
+$('#layerButtonMax').click(showLayerFunction);
+
+$('#layerButtonMin').click(hideLayerFunction);
 
 $('#infoButton').click(showinfoFunction);
 
 $('#graphButton').click(showgraphFunction);
-
-
-// **********************************
-// Hard code player:               //
-// **********************************
-
-// function timeoutFunction() {
-//     timer=setTimeout(changeLayer0Func, time);
-//     }
-//
-// function changeLayer0Func() {
-//       map.removeLayer(layersArray[0]);
-//       map.addLayer(layersArray[1]);
-//       timer=setTimeout(changeLayer1Func, time);
-//     }
-//
-// function changeLayer1Func() {
-//       map.removeLayer(layersArray[1]);
-//       map.addLayer(layersArray[2]);
-//       timer=setTimeout(changeLayer2Func, time);
-//     }
-//
-// function changeLayer2Func() {
-//       map.removeLayer(layersArray[2]);
-//       map.addLayer(layersArray[3]);
-//       timer=setTimeout(changeLayer3Func, time);
-//     }
-//
-// function changeLayer3Func() {
-//       map.removeLayer(layersArray[3]);
-//       map.addLayer(layersArray[4]);
-//       timer=setTimeout(changeLayer4Func, time);
-//     }
-//
-// function changeLayer4Func() {
-//       map.removeLayer(layersArray[4]);
-//       map.addLayer(layersArray[5]);
-//       timer=setTimeout(changeLayer5Func, time);
-//     }
-//
-// function changeLayer5Func() {
-//       map.removeLayer(layersArray[5]);
-//       map.addLayer(layersArray[6]);
-//       timer=setTimeout(changeLayer6Func, time);
-//     }
-//
-// function changeLayer6Func() {
-//       map.removeLayer(layersArray[6]);
-//       map.addLayer(layersArray[7]);
-//       timer=setTimeout(changeLayer7Func, time);
-//     }
-//
-// function changeLayer7Func() {
-//       map.removeLayer(layersArray[7]);
-//       map.addLayer(layersArray[8]);
-//       timer=setTimeout(changeLayer8Func, time);
-//     }
-//
-// function changeLayer8Func() {
-//       map.removeLayer(layersArray[8]);
-//       map.addLayer(layersArray[9]);
-//       timer=setTimeout(changeLayer9Func, time);
-//     }
-//
-// function changeLayer9Func() {
-//       map.removeLayer(layersArray[9]);
-//       map.addLayer(layersArray[10]);
-//       timer=setTimeout(changeLayer10Func, time);
-//     }
-//
-// function changeLayer10Func() {
-//       map.removeLayer(layersArray[10]);
-//       map.addLayer(layersArray[11]);
-//       timer=setTimeout(changeLayer11Func, time);
-//     }
-//
-// function changeLayer11Func() {
-//       map.removeLayer(layersArray[11]);
-//       map.addLayer(layersArray[12]);
-//       timer=setTimeout(changeLayer12Func, time);
-//     }
-//
-// function changeLayer12Func() {
-//       map.removeLayer(layersArray[12]);
-//       map.addLayer(layersArray[13]);
-//       timer=setTimeout(changeLayer13Func, time);
-//     }
-//
-// function changeLayer13Func() {
-//       map.removeLayer(layersArray[13]);
-//       map.addLayer(layersArray[14]);
-//       timer=setTimeout(changeLayer14Func, time);
-//     }
-//
-// function changeLayer14Func() {
-//       map.removeLayer(layersArray[14]);
-//       map.addLayer(layersArray[15]);
-//       timer=setTimeout(changeLayer15Func, time);
-//     }
-//
-// function changeLayer15Func() {
-//       map.removeLayer(layersArray[15]);
-//       map.addLayer(layersArray[16]);
-//       timer=setTimeout(changeLayer16Func, time);
-//     }
-//
-// function changeLayer16Func() {
-//       map.removeLayer(layersArray[16]);
-//       map.addLayer(layersArray[17]);
-//       timer=setTimeout(changeLayer17Func, time);
-//     }
-//
-// function changeLayer17Func() {
-//       map.removeLayer(layersArray[17]);
-//       map.addLayer(layersArray[18]);
-//       timer=setTimeout(changeLayer18Func, time);
-//     }
-//
-// function changeLayer18Func() {
-//       map.removeLayer(layersArray[18]);
-//       map.addLayer(layersArray[19]);
-//       timer=setTimeout(changeLayer19Func, time);
-//     }
-//
-// function changeLayer19Func() {
-//       map.removeLayer(layersArray[19]);
-//       map.addLayer(layersArray[20]);
-//       timer=setTimeout(changeLayer20Func, time);
-//     }
-//
-// function changeLayer20Func() {
-//       map.removeLayer(layersArray[20]);
-//       map.addLayer(layersArray[21]);
-//       timer=setTimeout(changeLayer21Func, time);
-//     }
-//
-// function changeLayer21Func() {
-//       map.removeLayer(layersArray[21]);
-//       map.addLayer(layersArray[22]);
-//       timer=setTimeout(changeLayer22Func, time);
-//     }
-//
-// function changeLayer22Func() {
-//       map.removeLayer(layersArray[22]);
-//       map.addLayer(layersArray[23]);
-//       timer=setTimeout(changeLayer23Func, time);
-//     }
-//
-// function changeLayer23Func() {
-//       map.removeLayer(layersArray[23]);
-//       map.addLayer(layersArray[24]);
-//       timer=setTimeout(changeLayer24Func, time);
-//     }
-//
-// function changeLayer24Func() {
-//       map.removeLayer(layersArray[24]);
-//       map.addLayer(layersArray[0]);
-//       timer=setTimeout(changeLayer25Func, time);
-//     }
-//
-// $('.StartButton').click(timeoutFunction);
-
-// **********************************
-// One by one player               //
-// **********************************
-
-// var count = -1;
-// var i     = -1;
-// var timer;
-//
-// function timeoutFunction() {
-//   if (i <= 22) {
-//     i += 1;
-//     count = count + 1;
-//     timer=setTimeout(changeLayerFunc, 0);
-// }
-//
-// function changeLayerFunc() {
-//   if (i <= 22) {
-//     i += 1;
-//     count = count + 1;
-//     map.removeLayer(layersArray[i]);
-//     map.addLayer(layersArray[i+1]);
-//     }
-//   else {
-//     i = -1
-//     count = -1;
-//     }
-// }

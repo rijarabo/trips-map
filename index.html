@@ -43,17 +43,9 @@
                 <i class='fas fa-pause' style= 'color:#0000CD'></i> To pause the animation anytime. </br>
                 <i class="fas fa-stop"  style= 'color:#0000CD'></i> To stop and restart the animation. </br>
                 <i class="fas fa-chart-pie" style= 'color:#0000CD'></i> To  see some graphics about citibike trips. </br>
-                <i class="fas fa-clone" style= 'color:#0000CD'></i> To show or hide the layer control. </br>
+                <i class="fas fa-plus-square" style= 'color:#0000CD'></i>/<i class="fas fa-minus-square" style= 'color:#0000CD'></i>  To show or hide the layer control. </br>
                 <i class="fas fa-info-circle" style= 'color:#0000CD'></i> To see this message again. </br></br>
                 Finally, by clicking any station, you can find out more information about the trips taken at any given hour. </br></br>
-              </p>
-            <h2>About the colors: </br></br></h2>
-              <p style= 'font-size:15px'> At first all the points will be displaying location of citibike stations in <a style= 'background-color:rgba(0, 0, 205, .6)'> blue</a>.</br></br>
-                When selecting layers, or playing the animation, the stations will change color and size to display different properties: </br></br>
-                If a station had more incoming trips during the hour, the station will be <a style= 'background-color:#32CD32'> green</a>.</br>
-                If a station had more outgoing trips during the hour, the station will be <a style= 'background-color:#DC143C'> red</a>.</br>
-                The size of the points depends on how many trips where taken from each station any given hour.</br></br>
-                <a style='font-size: 85%'> (All of this is also explained in the legend)</a>
               </p>
           </p>
         </div>
@@ -82,6 +74,9 @@
               <li class="nav-item">
                 <h2 class="nav-link active" href="#vstotal" data-toggle="tab">Starting v/s Ending by hour</h2>
               </li>
+              <li class="nav-item">
+                <h2 class="nav-link" href="#sources" data-toggle="tab">Credits</h2>
+              </li>
             </ul>
 
             <div class="tab-content">
@@ -90,6 +85,12 @@
               </div>
               <div class="tab-pane active" id="vstotal" role="tabpanel">
                 <canvas id='StartEndTotal'></canvas>
+              </div>
+              <div class="tab-pane" id="sources" role="tabpanel">
+                </br>
+                <h2> Trips from January 22, 2018 </br>
+                <h2> Available for download <a href="https://www.citibikenyc.com/system-data"> here </a></br>
+                <h2> By Rigel Jarabo </h2></br>
               </div>
             </div>
         </div>
@@ -100,25 +101,29 @@
   <!-- Left container w/ info -->
   <div id='container'> <h1> This is how 24 hours of citibike trips look like </h1>
       <div class='row justify-content-center'>
-        <div class="col-xs-6 col-md-4">
+        <div class="col-xs-6 col-md-4" id='Info'>
           <button class='button' id='infoButton'  tyle='display: inline-block'> <i class="fas fa-info-circle fa-4x" style= 'color:#0000CD'></i></button>
         </div>
-        <div class="col-md-4">
-          <button class='button' id='layerButton' tyle='display: inline-block'> <i class="fas fa-clone fa-4x" style= 'color:#0000CD'></i></button>
+        <div class="col-md-4" id='Layer'>
+          <button class='button' id='layerButtonMax' tyle='display: inline-block'> <i class="fas fa-plus-square fa-4x" style= 'color:#0000CD'></i></button>
+          <button class='button' id='layerButtonMin' tyle='display: inline-block' style='display:none'> <i class="fas fa-minus-square fa-4x" style= 'color:#0000CD'></i></button>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" id'Graph'>
           <button class='button' id='graphButton' tyle='display: inline-block'> <i class="fas fa-chart-pie fa-4x" style= 'color:#0000CD'></i></button>
         </div>
       </div>
         <div class='row justify-content-center'>
-          <div class="col-xs-6 col-md-4">
-            <button class='button' id='StartButton' tyle='display: inline-block'> <i class='fas fa-play fa-4x' style= 'color:#0000CD'></i></button>
+          <div class="col-xs-6 col-md-4" id='Start'>
+            <button class='buttondis' id='StartButton' tyle='display: inline-block' style='display:none'> <i class='fas fa-play fa-4x' style= 'color:#C0C0C0'></i></button>
+            <button class='button' id='StartButtonD' tyle='display: inline-block'> <i class='fas fa-play fa-4x' style= 'color:#0000CD'></i></button>
           </div>
-          <div class="col-md-4">
-            <button class='button' id='PauseButton' tyle='display: inline-block'> <i class='fas fa-pause fa-4x' style= 'color:#0000CD'></i></button>
+          <div class="col-md-4" id='Pause'>
+            <button class='buttondis' id='PauseButton' tyle='display: inline-block'> <i class='fas fa-pause fa-4x' style= 'color:#C0C0C0' disabled></i></button>
+            <button class='button' id='PauseButtonD' tyle='display: inline-block' style='display:none'> <i class='fas fa-pause fa-4x' style= 'color:#0000CD' disabled></i></button>
           </div>
-          <div class="col-md-4">
-            <button class='button' id='StopButton'  tyle='display: inline-block'> <i class='fas fa-stop fa-4x' style= 'color:#0000CD'></i></button> </br></br>
+          <div class="col-md-4" id='Stop'>
+            <button class='buttondis' id='StopButton'  tyle='display: inline-block'> <i class='fas fa-stop fa-4x' style= 'color:#C0C0C0' disabled></i></button>
+            <button class='button' id='StopButtonD'  tyle='display: inline-block' style='display:none'> <i class='fas fa-stop fa-4x' style= 'color:#0000CD' disabled></i></button> </br></br>
           </div>
       </div>
 
@@ -163,22 +168,26 @@
 
         </div>
       </div>
+
+      <div class='row' id=legend>
+        </br>
+        <p> Total number of trips: </br>
+          1 <i class='fas fa-circle fa-xs' style= 'color:#C2C1C2'></i>
+            <i class='fas fa-circle fa-sm' style= 'color:#C2C1C2'></i>
+            <i class='fas fa-circle fa-lg' style= 'color:#C2C1C2'></i>
+            <i class='fas fa-circle fa-2x' style= 'color:#C2C1C2'></i>
+            <i class='fas fa-circle fa-3x' style= 'color:#C2C1C2'></i> 30 + </br></br>
+            <i class='fas fa-circle fa-xs' style= 'color:#0000CD'></i> Citibike stations</br>
+          <i class='fas fa-circle fa-lg' style= 'color:#32CD32'></i> More incoming trips</br>
+          <i class='fas fa-circle fa-lg' style= 'color:#DC143C'></i> More outgoing trips</br>
+          <i class='fas fa-circle fa-lg' style= 'color:#C2C1C2'></i> Same amount of trips arriving and leaving
+        </p>
+      </div>
+
+
   </div>
 
-  <div class='row' id=legend>
-    </br>
-    <p> Total number of trips: </br>
-      1 <i class='fas fa-circle fa-xs' style= 'color:#C2C1C2'></i>
-        <i class='fas fa-circle fa-sm' style= 'color:#C2C1C2'></i>
-        <i class='fas fa-circle fa-lg' style= 'color:#C2C1C2'></i>
-        <i class='fas fa-circle fa-2x' style= 'color:#C2C1C2'></i>
-        <i class='fas fa-circle fa-3x' style= 'color:#C2C1C2'></i> 30 + </br></br>
-        <i class='fas fa-circle fa-xs' style= 'color:#0000CD'></i> Citibike stations</br>
-      <i class='fas fa-circle fa-lg' style= 'color:#32CD32'></i> More incoming trips</br>
-      <i class='fas fa-circle fa-lg' style= 'color:#DC143C'></i> More outgoing trips</br>
-      <i class='fas fa-circle fa-lg' style= 'color:#C2C1C2'></i> Same amount of trips arriving and leaving
-    </p>
-  </div>
+
 
   <div id='my-map'>
   </div>
@@ -225,6 +234,7 @@
       <script src='data/21.js'></script>
       <script src='data/22.js'></script>
       <script src='data/23.js'></script>
+      <script src="data/NYpoints_var.js"></script>
 
 <!-- LOAD JS script -->
 <script src='js/graph.js'></script>

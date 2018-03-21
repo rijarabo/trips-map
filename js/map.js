@@ -7,9 +7,10 @@ $(window).on('load',function(){
 var centerMap =[40.747582,-73.962193];
 var zoomMap= 13;
 var map = L.map('my-map').setView(centerMap, zoomMap);
-//var graph =
 
-// map //
+// **********************************
+//                MAP              //
+// **********************************
 
 // Tutorial to add google layers and style:
 // https://gitlab.com/IvanSanchez/Leaflet.GridLayer.GoogleMutant
@@ -285,24 +286,15 @@ function Style(feature) {
   };
 }
 
-// function onEachFeature (feature,layer) {
-//   Piedata = {
-//     datasets: [{
-//         data: [feature.properties.start, feature.properties.end,],
-//         backgroundColor: ['#DC143C','#32CD32']
-//     }],
-//     labels: ['Starting trips', 'Ending trips']
-//    },
-//   PieChart = new Chart(ctx,{
-//         type: 'pie',
-//         data: Piedata,
-//   })
-//   var popup=layer.bindPopup(`
-//     <b style='font-size: 120%'>Station:</b> ${feature.properties.station}<br/>
-//     <b style='font-size: 120%'>Hour:</b> ${feature.properties.hour}<br/>
-//     <b style='font-size: 120%'>Total trips:</b> ${feature.properties.total_trips_hour}<br/>
-//    <canvas id='PieChart'></canvas>`,)
-// }
+function TotStyle(feature) {
+  return {
+    weight: 0,
+    opacity: 1,
+    fillOpacity: 1,
+    fillColor: '#0000CD',
+    radius: 2,
+  };
+}
 
 function onEachFeature (feature,layer) {
   var popup=layer.bindPopup(`
@@ -313,25 +305,28 @@ function onEachFeature (feature,layer) {
    `,)
 }
 
+function TOTALonEachFeature (feature,layer) {
+  var popup=layer.bindPopup(`
+    <b style='font-size: 120%'>Total trips:</b> ${feature.properties.total}  <br/>
+    <b style='font-size: 120%'>Total trips staring:</b> ${feature.properties.start}  <br/>
+    <b style='font-size: 120%'>Total trips ending:</b> ${feature.properties.end}
+  `)
+}
+
 // **********************************
-// ADD LAYERS                      //
+//           ADD LAYERS            //
 // **********************************
 
 // DATA DOWNLOADED FROM:
 // citibikenyc.com/system-data
 
 // Only Stations
-var all = L.geoJson(var_00, {
+var all = L.geoJson(NYstations, {
   pointToLayer: function (feature, latlng) {
-    return L.circleMarker(latlng)
+  return L.circleMarker(latlng)
   },
-  style: {
-    weight: 0,
-    opacity: 1,
-    fillOpacity: 0.8,
-    fillColor: '#0000CD',
-    radius: 2
-  }
+  style: TotStyle,
+  onEachFeature: TOTALonEachFeature
 }).addTo(map);
 
 // 12:00

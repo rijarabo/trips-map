@@ -253,11 +253,11 @@ function hideLayerFunction() {   // Function called by "Hide layer" button, rese
 	$('#layerButtonMax').show();
 }
 
-function showinfoFunction() {   // Function called by "Shwor info" button, resets the player.
+function showinfoFunction() {   // Function called by "Show info" button, resets the player.
   $('#StartModalLong').modal('show');
 }
 
-function showgraphFunction() {   // Function called by "Shwor graph" button, resets the player.
+function showgraphFunction() {   // Function called by "Show graph" button, resets the player.
   $('#GraphicsModalLong').modal('show');
 }
 

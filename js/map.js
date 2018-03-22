@@ -300,16 +300,17 @@ function onEachFeature (feature,layer) {
   var popup=layer.bindPopup(`
     <b style='font-size: 120%'>Station:</b> ${feature.properties.station}<br/>
     <b style='font-size: 120%'>Trips between ${feature.properties.hour}: </b>${feature.properties.total_trips_hour}<br/>
-    <b style='font-size: 120%'>Trips leaving the station:</b> ${feature.properties.start} <br/>
-    <b style='font-size: 120%'>Trips arriving at the station:</b> ${feature.properties.end} <br/>
+    <b style='font-size: 120%'>Outgoing trips:</b> ${feature.properties.start} <br/>
+    <b style='font-size: 120%'>Incoming trips:</b> ${feature.properties.end} <br/>
    `,)
 }
 
 function TOTALonEachFeature (feature,layer) {
   var popup=layer.bindPopup(`
+    <b style='font-size: 120%'>Station:</b> ${feature.properties.station} <br/>
     <b style='font-size: 120%'>Total trips:</b> ${feature.properties.total}  <br/>
-    <b style='font-size: 120%'>Total trips staring:</b> ${feature.properties.start}  <br/>
-    <b style='font-size: 120%'>Total trips ending:</b> ${feature.properties.end}
+    <b style='font-size: 120%'>Outgoing trips:</b> ${feature.properties.end} <br/>
+    <b style='font-size: 120%'>Incoming trips:</b> ${feature.properties.start}  <br/>
   `)
 }
 

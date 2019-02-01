@@ -258,7 +258,7 @@ var radiusArray   = [25,         20,       15,       10,       5,        3];
 var ColorArray 		= ['#DC143C','#32CD32','#C0C0C0','#FFF'];
 var DisplayArray 	= ['start','end','same'];
 
-const getColor = function(display) {
+function getColor (display) {
   switch(display) {
     case 'start':   return {color: ColorArray[0]};
     case 'end'  :   return {color: ColorArray[1]};
